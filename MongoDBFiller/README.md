@@ -1,3 +1,4 @@
+# MongoDBFiller
 This project populates the MongoDB at localhost:27017 so make sure your MongoDB server is running locally on port 27017.
 
 1. Run this command inside this directory (using virtualenv recommended):
@@ -16,3 +17,6 @@ run these commands to verify that the DB was populated properly:
     db.Researchers.find()   -> This should list all of the Researcher documents
 
 NOTE: To add your own sample data, follow the instructions on SampleData.py
+
+## Database Structure
+![Database Structure](DatabaseStructure.png?raw=true)
