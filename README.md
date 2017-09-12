@@ -1,6 +1,9 @@
 # lfs-agrifood-backend
 
-This is the repository for the backend of the Agrifood project. It currently contains 1 project: MongoDBFiller that populates sample data for testing purposes. Project details are within the README of the project directory.
+This is the repository for the backend of the Agrifood project. It currently contains 1 sub-project: MongoDBFiller that populates sample data for testing purposes. Project details are within the README of the project directory.
+
+For consistency, you can assume that all Python code in this project has been written in [Python 3.6.1](https://www.python.org/downloads/release/python-361/)
+When adding 3rd party libraries to projects, please specify the version number of the package in the requirements.txt for consistency.
 
 # Structure of Data
 
