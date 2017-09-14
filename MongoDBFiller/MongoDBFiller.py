@@ -1,14 +1,25 @@
 from pymongo import MongoClient
 from SampleData import allSampleProjects, allSampleResearchers
 
+# Collect user input, defaults values are stated in brackets.
+ip = input('Enter IP where MongoDB server is running (localhost): ')
+port = input('Enter port number (27017): ')
+dbName = input('Enter DB name to populate (ubc-agrifood-database-project): ')
+
 # Connect to the MongoDB server
-client = MongoClient('localhost', 27017)
+if not ip:
+    ip = 'localhost'
+if not port:
+    port = 27017
+client = MongoClient(ip, int(port))
 
-# Drop the database if it exists
-client.drop_database('AgrifoodDB')
+# Delete relevant collections if they exist
+if not dbName:
+    dbName = 'ubc-agrifood-database-project'
+db = client.get_database(dbName)
+db.get_collection('Researchers').drop()
+db.get_collection('Projects').drop()
 
-# Create the database structure
-db = client.get_database('AgrifoodDB')
 researchersCollection = db.get_collection('Researchers')
 projectsCollection = db.get_collection('Projects')
 
