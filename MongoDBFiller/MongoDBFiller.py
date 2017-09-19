@@ -17,11 +17,11 @@ client = MongoClient(ip, int(port))
 if not dbName:
     dbName = 'ubc-agrifood-database-project'
 db = client.get_database(dbName)
-db.get_collection('Researchers').drop()
-db.get_collection('Projects').drop()
+db.get_collection('researchers').drop()
+db.get_collection('projects').drop()
 
-researchersCollection = db.get_collection('Researchers')
-projectsCollection = db.get_collection('Projects')
+researchersCollection = db.get_collection('researchers')
+projectsCollection = db.get_collection('projects')
 
 # Populate database with sample data defined in SampleData.py
 for researcher in allSampleResearchers:
