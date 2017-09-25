@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/MongoDBFiller.iml" filepath="$PROJECT_DIR$/.idea/MongoDBFiller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/MongoLoader.iml" filepath="$PROJECT_DIR$/.idea/MongoLoader.iml" />
     </modules>
   </component>
 </project>

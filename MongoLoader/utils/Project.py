@@ -12,7 +12,7 @@ class Project:
         self.topic = topic
         self.listResearchers = listResearchers
 
-    def getDocument(self, researcherIDs):
+    def getDocument(self):
         return {
             'title': self.title,
             'department': self.department,
@@ -22,5 +22,5 @@ class Project:
             'end': self.end,
             'funding': self.funding,
             'topic': self.topic,
-            'researchers': researcherIDs
+            'researchers': self.listResearchers
         }

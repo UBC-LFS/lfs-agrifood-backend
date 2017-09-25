@@ -1,5 +1,7 @@
-from Researcher import Researcher
-from Project import Project
+import sys
+sys.path.append("..")
+from utils.Project import Project
+from utils.Researcher import Researcher
 
 # If you want to add more examples to populate the database, add new Researcher and Project objects here. Remember to
 # append them to the allSampleResearchers and allSampleProjects lists for them to be added to the DB.
