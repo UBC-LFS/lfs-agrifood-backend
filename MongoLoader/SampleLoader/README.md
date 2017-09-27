@@ -1,6 +1,11 @@
 # SampleLoader
 This project populates the MongoDB at localhost:27017 so make sure your MongoDB server is running locally on port 27017.
 
+You may need to run, assuming pip is installed:
+
+`python -m pip install pymongo`
+
+
 Run this command inside this directory:
 
     `python SampleLoader.py`
