@@ -35,6 +35,8 @@ with open('ubc_sample_data.csv') as csvfile:
     reader = csv.reader(csvfile)
     next(reader)
     for row in reader:
+        if (row[2] == '' and row[3] == '') or row[12] == '':
+            continue
         # Extract all the necessary attributes from the CSV file
         researcherName = row[2] + ' ' + row[3]
         # Only add the researcher as a new object to the DB if they do not exist in the dict.
