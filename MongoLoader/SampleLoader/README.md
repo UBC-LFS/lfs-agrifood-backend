@@ -19,11 +19,11 @@ run these commands to verify that the DB was populated properly:
 
 Some useful Mongo command examples:
 
-Return all documents in the collection "projects" that have the title "Nutrition Survey"
-db.projects.find({'title' : 'Nutrition Survey'}).pretty()
+Return all documents in the collection "projects" that have the title "Nutrition Survey":<br>
+`db.projects.find({'title' : 'Nutrition Survey'}).pretty()`
 
-Return all documents in the collection "projects" that have research ObjectId("59c994f2e212e830283f7126") as a collaborator:
-db.projects.find({'researchers' : ObjectId("59c994f2e212e830283f7126")}).pretty()
+Return all documents in the collection "projects" that have research ObjectId("59c994f2e212e830283f7126") as a collaborator:<br>
+`db.projects.find({'researchers' : ObjectId("59c994f2e212e830283f7126")}).pretty()`
 
 ## Database Structure
 ![Database Structure](DatabaseStructure.png?raw=true)
