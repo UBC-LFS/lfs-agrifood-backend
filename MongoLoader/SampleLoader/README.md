@@ -24,6 +24,3 @@ Return all documents in the collection "projects" that have the title "Nutrition
 
 Return all documents in the collection "projects" that have research ObjectId("59c994f2e212e830283f7126") as a collaborator:<br>
 `db.projects.find({'researchers' : ObjectId("59c994f2e212e830283f7126")}).pretty()`
-
-## Database Structure
-![Database Structure](DatabaseStructure.png?raw=true)
