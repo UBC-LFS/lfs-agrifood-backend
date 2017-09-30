@@ -51,8 +51,10 @@ with open('ubc_sample_data.csv') as csvfile:
 
         projectTitle = row[12]
         # If the same project already exists in the DB, just add the current researcher to the list of collaborators
-        if (projectsCollection.find({'title' : projectTitle}).count() != 0):
-            projectsCollection.update({'title' : projectTitle}, {'$push' : {'researchers' : researcherId}})
+        if projectsCollection.find({'title': projectTitle}).count() != 0:
+            # Prevents duplicate researchers being added to the same project
+            if projectsCollection.find({'title': projectTitle, 'researchers': researcherId}).count == 0:
+                projectsCollection.update({'title': projectTitle}, {'$push': {'researchers': researcherId}})
         else:
             projectDepartment = row[9]
             projectInstitution = row[22]
