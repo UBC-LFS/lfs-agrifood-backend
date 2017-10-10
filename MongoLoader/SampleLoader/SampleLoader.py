@@ -42,7 +42,10 @@ with open('initial_RISe_data.csv') as csvfile:
         mainResearcher = row[1] + ' ' + row[2]
         # Some rows had the main researcher's name listed again in the collaborator column, so I remove duplicates.
         # WARNING: If there are actually 2 different researchers with the same names working on 1 project, this is bad.
-        researcherNames = list(set([mainResearcher] + row[12].split(';')))
+        if ';' in row[12]:
+            researcherNames = list(set([mainResearcher] + row[12].split(';')))
+        else:
+            researcherNames = [mainResearcher]
         currResearchersIds = []
         # Iterate through all relevant researchers of this project and add them to the DB if they don't exist
         for researcherName in researcherNames:
