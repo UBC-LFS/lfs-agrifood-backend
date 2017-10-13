@@ -9,7 +9,7 @@ from utils.Researcher import Researcher
 # Collect user input, defaults values are stated in brackets.
 ip = input('Enter IP where MongoDB server is running (localhost): ')
 port = input('Enter port number (27017): ')
-dbName = input('Enter DB name to populate (ubc-agrifood-database-project): ')
+dbName = input('Enter DB name to populate (bc-agrifood-database-project): ')
 
 # Connect to the MongoDB server
 if not ip:
