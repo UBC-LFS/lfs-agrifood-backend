@@ -20,7 +20,7 @@ client = MongoClient(ip, int(port))
 
 # Delete relevant collections if they exist
 if not dbName:
-    dbName = 'ubc-agrifood-database-project'
+    dbName = 'bc-agrifood-database-project'
 db = client.get_database(dbName)
 db.get_collection('researchers').drop()
 db.get_collection('projects').drop()
