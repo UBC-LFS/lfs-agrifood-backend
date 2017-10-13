@@ -31,7 +31,7 @@ projectsCollection = db.get_collection('projects')
 # This is a dict that will store a researcher's objectId. The key is the researcher's name, and the value is the objectId.
 # We assume that researchers with the same names are the same individuals for now.
 objectIds = dict({})
-with open('initial_RISe_data.csv') as csvfile:
+with open('initial_RISe_data.csv', encoding='cp1252') as csvfile:
     reader = csv.reader(csvfile)
     next(reader)
     for row in reader:
