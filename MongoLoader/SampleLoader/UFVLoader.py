@@ -8,9 +8,6 @@ from utils.Researcher import Researcher
 
 def transferData(mongoClient, sourceFile, destName):
     db = mongoClient.get_database(destName)
-    db.get_collection('researchers').drop()
-    db.get_collection('projects').drop()
-
     researchersCollection = db.get_collection('researchers')
     projectsCollection = db.get_collection('projects')
 
