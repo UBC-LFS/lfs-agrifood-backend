@@ -4,3 +4,5 @@
 **/.idea/tasks.xml
 *.pyo
 *.pyc
+node_modules
+output.json
