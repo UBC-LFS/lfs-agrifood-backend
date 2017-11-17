@@ -16,7 +16,7 @@ solrString = '[' + solrString[:-1] + ']'       # strip off last comma and wrap i
 
 myHeaders = {'Content-type': 'application/json'}
 r = requests.post("http://localhost:8983/solr/agrifood_projects_core/update?commit=true", data=solrString, headers=myHeaders)
-if (r.status_code == 0):
+if (r.status_code == 200):
     print('\nSuccessfully updated Solr')
 else:
     print('\nSolr update unsuccessful with response:\n' + json.dumps(json.loads(r.content)))
