@@ -35,7 +35,7 @@ def transferData(mongoClient, sourceFile, destName):
                 if researcherName not in objectIds:
                     researcherDepartment = row[7]
                     researcherInstitution = 'University of British Columbia'  #No row that corresponds to institution, so hardcoded as UBC
-                    researcher = Researcher(researcherName, researcherDepartment, researcherInstitution)
+                    researcher = Researcher(researcherName, researcherDepartment, researcherInstitution, None)
                     researcherId = researchersCollection.insert_one(researcher.getDocument()).inserted_id
                     objectIds[researcherName] = str(researcherId)
                     currResearchersIds += [researcherId]

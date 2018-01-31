@@ -25,4 +25,4 @@ db.get_collection('researchers').drop()
 db.get_collection('projects').drop()
 
 UBCLoader.transferData(mongoClient=client, sourceFile='initial_RISe_data.csv', destName=dbName)
-UFVLoader.transferData(mongoClient=client, sourceFile='UFV-modified.csv', destName=dbName)
+UFVLoader.transferData(mongoClient=client, sourceFile='UFV-modified-2.csv', destName=dbName)
