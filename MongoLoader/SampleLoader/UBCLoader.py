@@ -66,7 +66,7 @@ def transferData(mongoClient, sourceFile, destName):
                 projectStart = row[8].split(' ')[0]
                 projectEnd = row[9].split(' ')[0]
                 projectSponsor = row[4]
-                projectTopic = 'No topic available'
+                projectTopic = ''
                 projectCollaborators = currResearchersIds
                 project = Project(projectTitle, projectDepartment, projectInstitution, projectSummary, projectStart,
                                   projectEnd, projectSponsor, projectTopic, projectCollaborators)
