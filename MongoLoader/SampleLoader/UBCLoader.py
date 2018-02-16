@@ -51,9 +51,18 @@ def transferData(mongoClient, sourceFile, destName):
                     if projectsCollection.find({'title': projectTitle, 'researchers': currResearcherId}).count == 0:
                         projectsCollection.update({'title': projectTitle}, {'$push': {'researchers': currResearcherId}})
             else:
+                # Add all the abstracts for UBC projects
                 projectDepartment = row[7]
                 projectInstitution = 'University of British Columbia'
-                projectSummary = 'No summary available'
+                projectSummary = ''
+                with open('./ubc_abstracts.csv', encoding='cp1252') as ubc_abstracts:
+                    abstract_reader = csv.reader(ubc_abstracts)
+                    next(abstract_reader)
+                    for abstract_row in abstract_reader:
+                        if abstract_row[0].lower().replace('\n', ' ') == projectTitle.lower().replace('\n', ' ') or \
+                                        abstract_row[0] == projectTitle:
+                            projectSummary = abstract_row[1]
+                            break
                 projectStart = row[8].split(' ')[0]
                 projectEnd = row[9].split(' ')[0]
                 projectSponsor = row[4]
