@@ -5,8 +5,11 @@ class Researcher:
         self.name = name
         self.department = department
         self.institution = institution
-        # Adding the same random OrcID for testing purposes TODO: Fix this later
-        self.orcid = "0000-0003-0392-0702"
+        # TODO: This is not good, but there is no other way to handle this currently
+        if (name == 'Rickey Y. Yada'):
+            self.orcid = '0000-0002-8648-2156'
+        else:
+            self.orcid = None
 
     def getDocument(self):
         return {
