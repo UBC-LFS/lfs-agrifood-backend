@@ -17,8 +17,8 @@ This command should map every document from the MongoDB collection to the Solr
 Notes:
 
 To delete every index in Solr:
-http://localhost:8983/solr/agrifood_projects_core/update?stream.body=<delete><query>*:*</query></delete>
-http://localhost:8983/solr/agrifood_projects_core/update?stream.body=<commit/>
+`http://localhost:8983/solr/agrifood_projects_core/update?stream.body=<delete><query>*:*</query></delete>`
+`http://localhost:8983/solr/agrifood_projects_core/update?stream.body=<commit/>`
 
 Recent versions including 7.0.1 of Solr do not use the "schema.xml" anymore. Instead, you have to modify the schema through the Web UI, which creates a "managed-schema" file for you in the conf folder.
 
