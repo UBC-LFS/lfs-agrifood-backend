@@ -1,6 +1,7 @@
 # Class definition for Researcher object
 class Researcher:
 
+    # TODO: Actually make use of the orcid input once we have valid orcids in the database
     def __init__(self, name, department, institution, orcid):
         self.name = name
         self.department = department
