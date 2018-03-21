@@ -1,6 +1,14 @@
 # lfs-agrifood-backend
 
-This is the repository for the backend of the Agrifood project. It currently contains 1 sub-project: MongoDBFiller that populates sample data for testing purposes. Project details are within the README of the project directory.
+This is the repository for the backend of the Agrifood project. It has 2 subprojects: MongoLoader and SolrScript-Python which setup and populate MongoDB and Solr for agrifood-cms to read data from.
+
+To automatically set up MongoDB and Solr for production use, pull this repo into a Linux directory and run:
+
+`chmod +x init-agrifood.sh`
+
+`./init-agrifood.sh`
+
+The init-agrifood.sh script will setup MongoDB and Solr and populate them with the research data. It will also install any necessary packages such as Java8, Python3, and Curl. The shell script was designed for Alpine Linux, and will require slight modifications if running on a different distro of Linux.
 
 For consistency, you can assume that all Python code in this project has been written in [Python 3.6.1](https://www.python.org/downloads/release/python-361/)
 When adding 3rd party libraries to projects, please specify the version number of the package in the requirements.txt for consistency.
