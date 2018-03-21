@@ -85,8 +85,11 @@ curl -X POST -H 'Content-type:application/json' --data-binary '{
 cd /lfs-agrifood-backend/MongoLoader
 pip3 install -r requirements.txt
 cd SampleLoader
-python3 SampleLoader.py
-echo -en "\n\n\n"
+python3 SampleLoader.py << EOF
+\n
+\n
+\n
+EOF
 
 # Move data from MongoDB to Solr
 cd /lfs-agrifood-backend/SolrScript-Python
