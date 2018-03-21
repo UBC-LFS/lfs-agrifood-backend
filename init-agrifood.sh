@@ -1,32 +1,30 @@
 #!/bin/sh
 
-# download and install java
-wget http://javadl.oracle.com/webapps/download/AutoDL?BundleId=230532_2f38c3b165be4555a1fa6e98c45e0808
+cd /
 
-# BEFORE RUNNING THE SCRIPT, RUN THIS
-chmod +x init-agrifood.sh
-
-# Download, install, run MongoDB
+# Set up basic packages
 apk update
 apk upgrade
 apk add bash
+apk add curl
+
+# Download and install Java and Python
+apk add openjdk8-jre
+apk add python3
+
+# Download, install, run MongoDB
 apk add mongodb
 mkdir -p /data/db
 mongod --fork --logpath /mongod.log
 
 # Download, install, run Solr
 wget http://archive.apache.org/dist/lucene/solr/7.0.1/solr-7.0.1.tgz
-
 tar zxf solr-7.0.1.tgz
-
 cd solr-7.0.1/bin
+nohup ./solr start -force
+./solr create_core -c agrifood_projects_core -force
 
-./solr start
-
-./solr create_core -c agrifood_projects_core
-
-# Add the necessary fields
-
+# Add the necessary fields to Solr Schema
 curl -X POST -H 'Content-type:application/json' --data-binary '{
   "add-field":{
      "name":"title",
@@ -84,9 +82,13 @@ curl -X POST -H 'Content-type:application/json' --data-binary '{
 }' http://localhost:8983/solr/agrifood_projects_core/schema
 
 # Populate the MongoDB by running our python script
-cd ../../lfs-agrifood-backend/MongoLoader/SampleLoader
-python SampleLoader.py
+cd /lfs-agrifood-backend/MongoLoader
+pip3 install -r requirements.txt
+cd SampleLoader
+python3 SampleLoader.py
+echo -en "\n\n\n"
 
 # Move data from MongoDB to Solr
-cd  ../SolrScript-Python
-python MongoToSolr.py
+cd /lfs-agrifood-backend/SolrScript-Python
+pip3 install -r requirements.txt
+python3 MongoToSolr.py
