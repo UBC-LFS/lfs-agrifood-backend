@@ -53,8 +53,8 @@ def transferData(mongoClient, sourceFile, destName):
                 projectDepartment = row[1]
                 projectInstitution = row[2]
                 projectSummary = row[3]
-                projectStart = row[4].split('. ')[1] + '-' + str(monthToNum(row[4].split('. ')[0].strip()))
-                projectEnd = row[5].split('. ')[1] + '-' + str(monthToNum(row[5].split('. ')[0].strip()))
+                projectStart = row[4].split('. ')[1] + '-' + monthToNum(row[4].split('. ')[0].strip())
+                projectEnd = row[5].split('. ')[1] + '-' + monthToNum(row[5].split('. ')[0].strip())
                 projectSponsor = row[6]
                 projectTopic = row[7]
                 projectCollaborators = currResearchersIds
@@ -65,16 +65,16 @@ def transferData(mongoClient, sourceFile, destName):
 
 def monthToNum(shortMonth):
     return{
-            'JAN' : 1,
-            'FEB' : 2,
-            'MAR' : 3,
-            'APR' : 4,
-            'MAY' : 5,
-            'JUN' : 6,
-            'JUL' : 7,
-            'AUG' : 8,
-            'SEP' : 9,
-            'OCT' : 10,
-            'NOV' : 11,
-            'DEC' : 12
+            'JAN' : '01',
+            'FEB' : '02',
+            'MAR' : '03',
+            'APR' : '04',
+            'MAY' : '05',
+            'JUN' : '06',
+            'JUL' : '07',
+            'AUG' : '08',
+            'SEP' : '09',
+            'OCT' : '10',
+            'NOV' : '11',
+            'DEC' : '12'
     }[shortMonth]
