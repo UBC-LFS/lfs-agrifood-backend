@@ -53,8 +53,8 @@ def transferData(mongoClient, sourceFile, destName):
                 projectDepartment = row[1]
                 projectInstitution = row[2]
                 projectSummary = row[3]
-                projectStart = row[4].split('. ')[1] + '-' + monthToNum(row[4].split('. ')[0].strip()) + '-01'
-                projectEnd = row[5].split('. ')[1] + '-' + monthToNum(row[5].split('. ')[0].strip()) + '-01'
+                projectStart = row[4].split('. ')[1].strip() + '-' + monthToNum(row[4].split('. ')[0].strip()) + '-01'
+                projectEnd = row[5].split('. ')[1].strip() + '-' + monthToNum(row[5].split('. ')[0].strip()) + '-01'
                 projectSponsor = row[6]
                 projectTopic = row[7]
                 projectCollaborators = currResearchersIds
