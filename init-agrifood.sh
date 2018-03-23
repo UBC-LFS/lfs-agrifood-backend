@@ -86,11 +86,7 @@ curl -X POST -H 'Content-type:application/json' --data-binary '{
 cd "$projectDir"/MongoLoader
 pip3 install -r requirements.txt
 cd SampleLoader
-python3 SampleLoader.py << EOF
-\n
-\n
-\n
-EOF
+python3 SampleLoader.py
 
 # Move data from MongoDB to Solr
 cd "$projectDir"/SolrScript-Python

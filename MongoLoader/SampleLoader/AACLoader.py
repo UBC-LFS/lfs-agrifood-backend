@@ -54,7 +54,11 @@ def transferData(mongoClient, sourceFile, destName):
                 projectInstitution = row[2]
                 projectSummary = row[3]
                 projectStart = row[4].split('. ')[1].strip() + '-' + monthToNum(row[4].split('. ')[0].strip()) + '-01'
-                projectEnd = row[5].split('. ')[1].strip() + '-' + monthToNum(row[5].split('. ')[0].strip()) + '-01'
+                # some projects are ongoing, so they do not have an end date
+                if not row[5] == '':
+                    projectEnd = row[5].split('. ')[1].strip() + '-' + monthToNum(row[5].split('. ')[0].strip()) + '-01'
+                else:
+                    projectEnd = None
                 projectSponsor = row[6]
                 projectTopic = row[7]
                 projectCollaborators = currResearchersIds
