@@ -1,6 +1,6 @@
 #!/bin/sh
 
-projectDir = "$(pwd)"
+projectDir="$(pwd)"
 cd ..
 
 # Set up basic packages
