@@ -1,6 +1,7 @@
 #!/bin/sh
 
-cd /
+projectDir = "$(pwd)"
+cd ..
 
 # Set up basic packages
 apk update
@@ -82,7 +83,7 @@ curl -X POST -H 'Content-type:application/json' --data-binary '{
 }' http://localhost:8983/solr/agrifood_projects_core/schema
 
 # Populate the MongoDB by running our python script
-cd /lfs-agrifood-backend/MongoLoader
+cd "$projectDir"/MongoLoader
 pip3 install -r requirements.txt
 cd SampleLoader
 python3 SampleLoader.py << EOF
@@ -92,6 +93,6 @@ python3 SampleLoader.py << EOF
 EOF
 
 # Move data from MongoDB to Solr
-cd /lfs-agrifood-backend/SolrScript-Python
+cd "$projectDir"/SolrScript-Python
 pip3 install -r requirements.txt
 python3 MongoToSolr.py
