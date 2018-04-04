@@ -29,21 +29,21 @@ nohup ./solr start -force
 curl -X POST -H 'Content-type:application/json' --data-binary '{
   "add-field":{
      "name":"title",
-     "type":"string",
+     "type":"text_general",
      "stored":true }
 }' http://localhost:8983/solr/agrifood_projects_core/schema
 
 curl -X POST -H 'Content-type:application/json' --data-binary '{
   "add-field":{
      "name":"topic",
-     "type":"string",
+     "type":"text_general",
      "stored":true }
 }' http://localhost:8983/solr/agrifood_projects_core/schema
 
 curl -X POST -H 'Content-type:application/json' --data-binary '{
   "add-field":{
      "name":"summary",
-     "type":"string",
+     "type":"text_general",
      "stored":true }
 }' http://localhost:8983/solr/agrifood_projects_core/schema
 
@@ -57,14 +57,14 @@ curl -X POST -H 'Content-type:application/json' --data-binary '{
 curl -X POST -H 'Content-type:application/json' --data-binary '{
   "add-field":{
      "name":"institution",
-     "type":"string",
+     "type":"text_general",
      "stored":true }
 }' http://localhost:8983/solr/agrifood_projects_core/schema
 
 curl -X POST -H 'Content-type:application/json' --data-binary '{
   "add-field":{
      "name":"funding",
-     "type":"string",
+     "type":"text_general",
      "stored":true }
 }' http://localhost:8983/solr/agrifood_projects_core/schema
 
@@ -78,7 +78,7 @@ curl -X POST -H 'Content-type:application/json' --data-binary '{
 curl -X POST -H 'Content-type:application/json' --data-binary '{
   "add-field":{
      "name":"department",
-     "type":"string",
+     "type":"text_general",
      "stored":true }
 }' http://localhost:8983/solr/agrifood_projects_core/schema
 
